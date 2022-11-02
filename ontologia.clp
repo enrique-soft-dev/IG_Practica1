@@ -10,16 +10,17 @@
 (deftemplate gamestate
     (slot state ;; Estado en el que se encuentra la interaccion
         (type SYMBOL)
-        (allowed-values INIT-GAME CHANGE-TURN SELECT-CELL PROCESS-CELL CHECK-FINISH END-GAME)
+        (allowed-values INIT-GAME SELECT-CELL PROCESS-CELL CHECK-FINISH END-GAME EXIT)
     )
     (slot personality_action ;; Flag para interrumpir el estado general de juego debido a una personalidad
         (type SYMBOL)
         (allowed-values YES NO)
         (default NO)
     )
-    (slot cell-typee ;; Permite saber el tipo de casilla escogida
+    (slot cell_typee ;; Permite saber el tipo de casilla escogida
         (type SYMBOL)
-        (allowed-values CONTINUE STOP CHANGE))
+        (allowed-values CONTINUE CHANGE STOP)
+    )
 )
 
 ;; Plantilla de Turno
@@ -31,6 +32,16 @@
     )
 )
 
+;; Plantilla de Contador de Celdas
+;; Representa un contador de celdas de cada tablero
+(deftemplate cell_counter
+    (slot board
+        (type INTEGER)
+    )
+    (slot continue_count
+        (type INTEGER)
+    )
+)
 
 ;; Clase de Jugador
 ;; Representa un posible jugador de la partida (nino o robot)
@@ -89,7 +100,7 @@
 ;; Clase de personalidad
 ;; Representa las posibles acciones de una personalidad concreta
 (defclass personality
-    (slot personality-typee ;; Tipo de personalidad
+    (slot personality_typee ;; Tipo de personalidad
         (type STRING)
     )
     (slot action ;; Accion correspondiente a un tipo de personalidad
@@ -100,7 +111,7 @@
 ;; Clase de respuesta
 ;; Representa las posibles respuestas que hace el NAO dependiendo de la personalidad del niño
 (defclass personality
-    (slot personality-typee ;; Tipo de personalidad
+    (slot personality_typee ;; Tipo de personalidad
         (type STRING)
     )
     (slot answer ;; Respuesta correspondiente a un tipo de personalidad
