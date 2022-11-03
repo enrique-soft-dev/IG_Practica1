@@ -14,17 +14,14 @@
 
 (defrule innit-game
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
-    (exists 
-        (object (is-a game) (namee ?n) (desc ?d))
-        (object (is-a player) (typee NINO))
-        (object (is-a player) (typee ROBOT))
-    )
-    (test 
-        (eq ?s INIT-GAME)
-        (eq ?pa NO)
-    )
+    (object (is-a game) (namee ?n) (desc ?d)) 
+    (object (is-a player) (typee NINO))
+    (object (is-a player) (typee ROBOT))
+    
+    (test (eq ?s INIT-GAME))
+    (test (eq ?pa NO))
     =>
-    (modify ?gs (state SELECT-CELL) (personality_action YES) (cell_count))
+    (modify ?gs (state SELECT-CELL) (personality_action YES))
     (printout t ?n crlf)
     (printout t ?d crlf)
 )
@@ -35,32 +32,32 @@
 ;; SELECT CELL BLOCK
 (defrule select-cell-hidden
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
-    (turn (owner ?p))
-    (player (namee ?n) (typee ?p) (board ?b))
-    ?c <- (cell (content ?co) (typee ?t) (board ?b) (visible ?v))
+    (turn (owner ?o))
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+    ?c <- (object (is-a cell) (content ?co) (typee ?t) (board ?b) (visible ?v))
+
     (test (eq ?s SELECT-CELL))
-    (test (eq ?pa NO)
+    (test (eq ?pa NO))
     (test (eq ?v NO))
     =>
     (modify ?gs (state PROCESS-CELL) (personality_action YES) (cell_typee ?t))
     (modify-instance ?c (visible YES))
-    (printout t ?p " selected a " ?co " cell from board" ?b crlf)
+    (printout t ?o " selected a " ?co " hidden cell from board " ?b crlf)
 )
 
 (defrule select-cell-visible
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
     (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
-    ?c <- (cell (content ?co) (typee ?t) (board ?b) (visible ?v))
-    (test 
-        (eq ?s SELECT-CELL)
-        (eq ?pa NO)
-        (eq ?v YES)
-        (neq ?p ROBOT)
-    )
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+    ?c <- (object (is-a cell) (content ?co) (typee ?t) (board ?b) (visible ?v))
+
+    (test (eq ?s SELECT-CELL))
+    (test (eq ?pa NO))
+    (test (eq ?v YES))
+    (test (neq ?o ROBOT))
     =>
     (modify ?gs (personality_action YES))
-    (printout t ?o " selected a " ?co " hidden cell from board" ?b crlf)
+    (printout t ?o " selected a " ?co " cell from board " ?b crlf)
 )
 ;;##################################
 
@@ -70,13 +67,12 @@
 (defrule process-cell-continue
     ?gs <- (gamestate (state ?s) (personality_action ?pa) (cell_typee ?t))
     (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
     ?c <- (cell_counter (board ?b) (continue_count ?cc))
-    (test 
-        (eq ?s PROCESS-CELL)
-        (eq ?pa NO)
-        (eq ?t CONTINUE)
-    )
+
+    (test (eq ?s PROCESS-CELL))
+    (test (eq ?pa NO))
+    (test (eq ?t CONTINUE))
     =>
     (modify ?gs (state CHECK-FINISH) (personality_action YES))
     (modify ?c (continue_count (- ?cc 1)))
@@ -86,15 +82,13 @@
 (defrule process-cell-change
     ?gs <- (gamestate (state ?s) (personality_action ?pa) (cell_typee ?t))
     ?gt <- (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
-    (player (typee ?no))
-    ?c <- (cell_counter (board ?b) (continue_count ?cc))
-    (test 
-        (eq ?s PROCESS-CELL)
-        (eq ?pa NO)
-        (eq ?t CHANGE)
-        (neq ?o ?no)
-    )
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+    (object (is-a player) (typee ?no))
+
+    (test (eq ?s PROCESS-CELL))
+    (test (eq ?pa NO))
+    (test (eq ?t CHANGE))
+    (test (neq ?o ?no))
     =>
     (modify ?gs (state CHECK-FINISH) (personality_action YES))
     (modify ?gt (owner ?no))
@@ -104,15 +98,14 @@
 (defrule process-cell-stop
     ?gs <- (gamestate (state ?s) (personality_action ?pa) (cell_typee ?t))
     ?gt <- (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
-    (player (typee ?no))
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+    (object (is-a player) (typee ?no))
     ?c <- (cell_counter (board ?b) (continue_count ?cc))
-    (test 
-        (eq ?s PROCESS-CELL)
-        (eq ?pa NO)
-        (eq ?t CONTINUE)
-        (neq ?o ?no)
-    )
+
+    (test (eq ?s PROCESS-CELL))
+    (test (eq ?pa NO))
+    (test (eq ?t STOP))
+    (test (neq ?o ?no))
     =>
     (modify ?gs (state END-GAME) (personality_action YES))
     (modify ?gt (owner ?no))
@@ -124,16 +117,14 @@
 ;;##################################
 ;; FINISH GAME BLOCK
 (defrule check-finish-continue
-    ?gs <- (gamestate (state ?s) (personality_action ?pa) (cell_typee ?t))
+    ?gs <- (gamestate (state ?s) (personality_action ?pa))
     (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
     (cell_counter (board ?b) (continue_count ?cc))
-    (test 
-        (eq ?s CHECK-FINISH)
-        (eq ?pa NO)
-        (eq ?t CHANGE)
-        (neq ?cc 0)
-    )
+
+    (test (eq ?s CHECK-FINISH))
+    (test (eq ?pa NO))
+    (test (neq ?cc 0))
     =>
     (modify ?gs (state SELECT-CELL) (personality_action YES))
     (printout t ?o " has " ?cc " CONTINUE remaining in board " ?b crlf)
@@ -141,29 +132,26 @@
 
 
 (defrule check-finish-finish
-    ?gs <- (gamestate (state ?s) (personality_action ?pa) (cell_typee ?t))
+    ?gs <- (gamestate (state ?s) (personality_action ?pa))
     (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
     (cell_counter (board ?b) (continue_count ?cc))
-    (test 
-        (eq ?s CHECK-FINISH)
-        (eq ?pa NO)
-        (eq ?t CHANGE)
-        (neq ?o ?no)
-    )
+
+    (test (eq ?s CHECK-FINISH))
+    (test (eq ?pa NO))
+    (test (eq ?cc 0))
     =>
-    (modify ?gs (state END_GAME) (personality_action YES))
-    (printout t ?o "' has no CONTINUE left in board " ?b crlf)
+    (modify ?gs (state END-GAME) (personality_action YES))
+    (printout t ?o " has no CONTINUE left in board " ?b crlf)
 )
 
 (defrule end-game
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
     (turn (owner ?o))
-    (player (namee ?n) (typee ?o) (board ?b))
-    (test 
-        (eq ?s END-GAME)
-        (eq ?pa NO)
-    )
+    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+
+    (test (eq ?s END-GAME))
+    (test (eq ?pa NO))
     =>
     (modify ?gs (state EXIT) (personality_action YES))
     (printout t ?n " wins!" crlf)
@@ -172,10 +160,9 @@
 
 (defrule exit-game
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
-    (test 
-        (eq ?s EXIT)
-        (eq ?pa NO)
-    )
+
+    (test (eq ?s EXIT))
+    (test (eq ?pa NO))
     =>
     (halt)
 )
@@ -186,11 +173,9 @@
 ;; PERSONALITY ACTION BLOCK
 (defrule personality-action
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
-    (test 
-        (eq ?pa YES)
-    )
+    (test (eq ?pa YES))
     =>
     (modify ?gs (personality_action NO))
-    (printout t "Personality action at state " ?s crlf)
+    ;;(printout t "Personality action at state " ?s crlf)
 )
 ;;##################################

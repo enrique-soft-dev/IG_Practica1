@@ -20,6 +20,7 @@
     (slot cell_typee ;; Permite saber el tipo de casilla escogida
         (type SYMBOL)
         (allowed-values CONTINUE CHANGE STOP)
+
     )
 )
 
@@ -37,6 +38,7 @@
 (deftemplate cell_counter
     (slot board
         (type INTEGER)
+        (default 1)
     )
     (slot continue_count
         (type INTEGER)
@@ -79,6 +81,7 @@
     (slot visible ;; Si la celda es visible. Concepto para usar con personalidad
         (type SYMBOL)
         (allowed-values YES NO)
+        (default NO)
     )
 )
 
