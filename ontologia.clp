@@ -45,7 +45,7 @@
 
 ;; Clase de Jugador
 ;; Representa un posible jugador de la partida (nino o robot)
-(defclass player
+(defclass player (is-a USER)
     (slot namee ;; El nombre del jugador por ser mas personal en la comunicacion (el robot es siempre NAO)
         (type STRING)
     )
@@ -64,7 +64,7 @@
 
 ;; Clase de Casilla
 ;; Representa el concepto de cualquier casilla/celda/ficha de un juego
-(defclass cell
+(defclass cell (is-a USER)
     (slot content ;; Contenido de la celda. Puede ser un barco, una mina...
         (type STRING)
     )
@@ -85,7 +85,7 @@
 ;; Clase de Juego
 ;; Representa el concepto de uno de los juegos
 ;; Contiene informacion de como se juega o del juego en si
-(defclass game
+(defclass game (is-a USER)
     (slot namee ;; Nombre del juego al que se va a jugar
         (type STRING)
     )
@@ -99,7 +99,7 @@
 
 ;; Clase de personalidad
 ;; Representa las posibles acciones de una personalidad concreta
-(defclass personality
+(defclass personality (is-a USER)
     (slot personality_typee ;; Tipo de personalidad
         (type STRING)
     )
@@ -110,7 +110,7 @@
 
 ;; Clase de respuesta
 ;; Representa las posibles respuestas que hace el NAO dependiendo de la personalidad del niño
-(defclass personality
+(defclass personality (is-a USER)
     (slot personality_typee ;; Tipo de personalidad
         (type STRING)
     )

@@ -7,15 +7,15 @@
 
 ;;##################################
 ;; INIT GAME BLOCK
-(deffacts
+(deffacts innit-gamestate
     (gamestate (state INIT-GAME))
     (turn (owner ROBOT))
 )
 
-(defrule init-game
+(defrule innit-game
     ?gs <- (gamestate (state ?s) (personality_action ?pa))
     (exists 
-        (object (is-a gamestate) (namee ?n) (desc ?d))
+        (object (is-a game) (namee ?n) (desc ?d))
         (object (is-a player) (typee NINO))
         (object (is-a player) (typee ROBOT))
     )
@@ -38,11 +38,9 @@
     (turn (owner ?p))
     (player (namee ?n) (typee ?p) (board ?b))
     ?c <- (cell (content ?co) (typee ?t) (board ?b) (visible ?v))
-    (test 
-        (eq ?s SELECT-CELL)
-        (eq ?pa NO)
-        (eq ?v NO)
-    )
+    (test (eq ?s SELECT-CELL))
+    (test (eq ?pa NO)
+    (test (eq ?v NO))
     =>
     (modify ?gs (state PROCESS-CELL) (personality_action YES) (cell_typee ?t))
     (modify-instance ?c (visible YES))
