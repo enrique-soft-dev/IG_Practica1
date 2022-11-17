@@ -7,30 +7,9 @@ Buscame esta
 [DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
 [DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CONTINUE, 6 remaining in board BOARD-1
-[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CONTINUE, 5 remaining in board BOARD-1
-[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CONTINUE, 4 remaining in board BOARD-1
-[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 3 remaining in board BOARD-1
-[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 2 remaining in board BOARD-1
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 1 remaining in board BOARD-1
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 0 remaining in board BOARD-1
-[DEBUG] Game finishes, counterBOARD-1 has reached 0
+[DEBUG] Personality action of type TRISTE for player NINO with new personality counter -89
+Empieza a llorar, NAO no puede consolar, se acaba el juego
+[DEBUG] Game finishes due to too many personality actions
 [DEBUG] NAO wins!
 <== Focus MAIN
 CLIPS> (dribble-off)

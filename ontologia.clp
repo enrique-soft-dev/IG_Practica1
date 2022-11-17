@@ -38,8 +38,8 @@
 (deftemplate counter
     (slot typee
         (type SYMBOL)
-        (default BOARD-1)
         (allowed-values BOARD-1 BOARD-2 PERSONALITY)
+        (default BOARD-1)
     )
     (slot countt
         (type INTEGER)
@@ -62,8 +62,8 @@
     )
     (slot board ; Tablero que usa cada jugador. Sirve para jeugos con tableros distintos
         (type SYMBOL)
-        (default BOARD-1)
         (allowed-values BOARD-1 BOARD-2)
+        (default BOARD-1)
     )
 )
 
@@ -79,8 +79,8 @@
     )
     (slot board ; Tablero al que pertenece la celda
         (type SYMBOL)
-        (default BOARD-1)
         (allowed-values BOARD-1 BOARD-2)
+        (default BOARD-1)
     )
     (slot visible ; Si la celda es visible. Concepto para usar con personalidad
         (type SYMBOL)
@@ -108,14 +108,21 @@
         (type SYMBOL)
         (allowed-values TRISTE DISTRAIDO BURLON INSEGURO INQUIETO)
     )
+    (slot descriptor
+        (type SYMBOL)
+        (allowed-values MESSAGE-ONLY MAKE-EASIER END-GAME)
+        (default MESSAGE-ONLY)
+    )
     (slot message ; Accion correspondiente a un tipo de personalidad
         (type STRING)
     )
     (slot reduce-counter
         (type SYMBOL)
         (allowed-values BOARD-1 BOARD-2 PERSONALITY)
+        (default BOARD-2)
     )
     (slot reduce-by
         (type INTEGER)
+        (default 0)
     )
 )

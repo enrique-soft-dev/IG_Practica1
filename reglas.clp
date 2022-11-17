@@ -4,7 +4,7 @@
 ; Mario Maroto Jimenez - 100429025
 ; Enrique Mateos Melero - 100429073
 ;##################################
-
+; TRISTE DISTRAIDO BURLON INSEGURO INQUIETO
 ;##################################
 ; INIT GAME BLOCK
 (deffacts innit-gamestate
@@ -13,7 +13,7 @@
 )
 
 (defrule innit-game
-    ?gs <- (gamestate (state INIT-GAME) (personality_action NO))
+    ?gs <- (gamestate (state INIT-GAME))
     (object (is-a game) (namee ?n) (desc ?d)) 
     (object (is-a player) (typee NINO))
     (object (is-a player) (typee ROBOT))
@@ -43,9 +43,9 @@
     (turn (owner ?o&~ROBOT))
     (object (is-a player) (namee ?n) (typee ?o) (board ?b))
     ?c <- (object (is-a cell) (content ?co) (typee ?t) (board ?b) (visible YES))
-    ?pc <- (counter (typee PERSONALITY) (countt ?c))
+    ?pcnt <- (counter (typee PERSONALITY) (countt ?pc))
     =>
-    (modify ?pc (countt (- ?c 1)))
+    (modify ?pcnt (countt (- ?pc 1)))
     (printout t "[DEBUG] " ?o " selected a " ?co " cell from board " ?b crlf)
 )
 ;##################################
@@ -99,13 +99,13 @@
     (counter (typee ?b) (countt 0))
     =>
     (modify ?gs (state END-GAME))
-    (printout t "[DEBUG]" ?o " has no CONTINUE left in board " ?b crlf)
+    (printout t "[DEBUG] " ?o " has no CONTINUE left in board " ?b crlf)
 )
 
 (defrule check-finish-personality
     (declare (salience 100))
     ?gs <- (gamestate (state ~END-GAME))
-    ?gt <- (turno (owner ?o))
+    ?gt <- (turn (owner ?o))
     (object (is-a player) (typee ?no&~?o))
     (counter (typee PERSONALITY) (countt ?c&:(<= ?c 0)))
     =>
@@ -128,14 +128,16 @@
 ;##################################
 ; PERSONALITY ACTION BLOCK
 (defrule personality-action
-    ?gs <- (gamestate (state ?s) (personality_action YES))
-    (turno ?o&NINO)
+    (gamestate (state ?s) (personality_action YES))
+    (turn (owner ?o&~ROBOT))
     (object (is-a player) (typee ?o) (personality_typee ?pt))
-    ?pa <- (object (is-a personality) (typee ?pt) (message ?pm) (reduce-counter ?rc) (reduce-by ?rb))
-    ?cc <- (counter (typee ?rc) (countt ?c))
+    (object (is-a personality) (typee ?pt) (message ?pm) (reduce-counter ?rc) (reduce-by ?rb))
+    ?pcnt <- (counter (typee PERSONALITY) (countt ?p))
+    ?rcnt <- (counter (typee ?rc) (countt ?r))
     =>
-    (modify ?gs (personality_action NO))
-    (modify ?cc (countt (- ?c ?rb)))
-    ;(printout t "Personality action at state " ?s crlf)
+    (modify ?pcnt (countt (- ?p 1)))
+    (modify ?rcnt (countt (- ?r ?rb)))
+    (printout t "[DEBUG] Personality action of type " ?pt " for player " ?o " with new personality counter " (- ?r ?rb) crlf)
+    (printout t ?pm crlf)
 )
 ;##################################

@@ -6,6 +6,7 @@
 
 (load ontologia.clp)
 (load reglas.clp)
+(load personalities.clp)
 (load prueba.clp)
 (seed (integer (time))) 
 (set-strategy random)
@@ -14,4 +15,3 @@
 (dribble-on salida.txt)
 (run)
 (dribble-off)
-(clear)

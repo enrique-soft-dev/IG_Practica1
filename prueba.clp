@@ -44,20 +44,20 @@
     (of game (namee "Buscaminas") (desc "Buscame esta"))
 
     (of player (namee "NAO") (typee ROBOT))
-    (of player (namee "Juanitoooo") (typee NINO))
+    (of player (namee "Juanitoooo") (typee NINO) (personality_typee TRISTE))
 
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
-    (of cell (content "Mina") (typee STOP))
+    ;(of cell (content "Mina") (typee STOP))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Bandera") (typee CONTINUE))
-    (of cell (content "Mina") (typee STOP))
+    ;(of cell (content "Mina") (typee STOP))
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
-    (of cell (content "Mina") (typee STOP))
+    ;(of cell (content "Mina") (typee STOP))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
@@ -67,5 +67,5 @@
 
 (deffacts innit-counters
     (counter (countt 8))
-    (counter (countt 5) (typee PERSONALITY))
+    (counter (countt 10) (typee PERSONALITY))
 )
