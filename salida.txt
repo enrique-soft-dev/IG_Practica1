@@ -4,10 +4,16 @@ Buscaminas
 Buscame esta
 [DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
+[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
 [DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO with new personality counter 7
 Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego
-[DEBUG] Personality action of type TRISTE / END-GAME for player NINO with new personality counter -90
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO with new personality counter 6
+Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO with new personality counter 5
+Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego
+[DEBUG] NINO's cell was a CONTINUE, 4 remaining in board BOARD-1
+[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
+[DEBUG] Personality action of type TRISTE / END-GAME for player NINO with new personality counter -92
 Empieza a llorar, NAO no puede consolar, se acaba el juego
 [DEBUG] Game finishes due to personality actions
 [DEBUG] NAO wins!
