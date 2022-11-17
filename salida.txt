@@ -2,14 +2,14 @@ TRUE
 CLIPS> (run)
 Buscaminas
 Buscame esta
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 7 remaining in board BOARD-1
 [DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
-[DEBUG] Personality action of type TRISTE for player NINO with new personality counter -89
+[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO with new personality counter 7
+Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego
+[DEBUG] Personality action of type TRISTE / END-GAME for player NINO with new personality counter -90
 Empieza a llorar, NAO no puede consolar, se acaba el juego
-[DEBUG] Game finishes due to too many personality actions
+[DEBUG] Game finishes due to personality actions
 [DEBUG] NAO wins!
 <== Focus MAIN
 CLIPS> (dribble-off)

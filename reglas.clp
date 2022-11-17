@@ -111,7 +111,7 @@
     =>
     (modify ?gt (owner ?no))
     (modify ?gs (state END-GAME) (personality_action NO))
-    (printout t "[DEBUG] Game finishes due to too many personality actions" crlf)
+    (printout t "[DEBUG] Game finishes due to personality actions" crlf)
 )
 
 (defrule end-game
@@ -131,13 +131,13 @@
     (gamestate (state ?s) (personality_action YES))
     (turn (owner ?o&~ROBOT))
     (object (is-a player) (typee ?o) (personality_typee ?pt))
-    (object (is-a personality) (typee ?pt) (message ?pm) (reduce-counter ?rc) (reduce-by ?rb))
+    (object (is-a personality) (typee ?pt) (descriptor ?pd) (message ?pm) (reduce-counter ?rc) (reduce-by ?rb))
     ?pcnt <- (counter (typee PERSONALITY) (countt ?p))
     ?rcnt <- (counter (typee ?rc) (countt ?r))
     =>
     (modify ?pcnt (countt (- ?p 1)))
     (modify ?rcnt (countt (- ?r ?rb)))
-    (printout t "[DEBUG] Personality action of type " ?pt " for player " ?o " with new personality counter " (- ?r ?rb) crlf)
+    (printout t "[DEBUG] Personality action of type " ?pt " / " ?pd " for player " ?o " with new personality counter " (- ?r ?rb) crlf)
     (printout t ?pm crlf)
 )
 ;##################################

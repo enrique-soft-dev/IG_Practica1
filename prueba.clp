@@ -1,8 +1,9 @@
 ; (definstances innit-game
 ;     (of game (namee "Hundir La Flota") (desc "Pues tienes que hundir la flota no se que mas quieres que te diga"))
 
-;     (of player (namee "NAO") (typee ROBOT))
-;     (of player (namee "Pedroooooo") (typee NINO) (board BOARD-2))
+;     (of player (namee "Pedroooooo") (typee NINO))
+;     (of player (namee "NAO") (typee ROBOT) (board BOARD-2))
+
 
 ;     (of cell (content "Barco") (typee CONTINUE))
 ;     (of cell (content "Barco") (typee CONTINUE))

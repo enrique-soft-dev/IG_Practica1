@@ -119,7 +119,7 @@
     (slot reduce-counter
         (type SYMBOL)
         (allowed-values BOARD-1 BOARD-2 PERSONALITY)
-        (default BOARD-2)
+        (default BOARD-1)
     )
     (slot reduce-by
         (type INTEGER)
