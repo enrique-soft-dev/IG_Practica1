@@ -137,7 +137,7 @@
     =>
     (modify ?pcnt (countt (- ?p 1)))
     (modify ?rcnt (countt (- ?r ?rb)))
-    (printout t "[DEBUG] Personality action of type " ?pt " / " ?pd " for player " ?o " with new personality counter " (- ?r ?rb) crlf)
+    (printout t "[DEBUG] Personality action of type " ?pt " / " ?pd " for player " ?o " with new personality counter " (- ?p ?rb) crlf)
     (printout t ?pm crlf)
 )
 ;##################################
