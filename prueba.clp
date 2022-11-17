@@ -2,7 +2,7 @@
 ;     (of game (namee "Hundir La Flota") (desc "Pues tienes que hundir la flota no se que mas quieres que te diga"))
 
 ;     (of player (namee "NAO") (typee ROBOT))
-;     (of player (namee "Pedroooooo") (typee NINO) (board 2))
+;     (of player (namee "Pedroooooo") (typee NINO) (board BOARD-2))
 
 ;     (of cell (content "Barco") (typee CONTINUE))
 ;     (of cell (content "Barco") (typee CONTINUE))
@@ -19,25 +19,25 @@
 ;     (of cell (content "Barco") (typee CONTINUE))
 ;     (of cell (content "Barco") (typee CONTINUE))
     
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
+;     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
 ; )
 
 ; (deffacts innit-counters
-;     (cell_counter (continue_count 8))
-;     (cell_counter (board 2) (continue_count 8))
+;     (counter (countt 8))
+;     (counter (board BOARD-2) (countt 8))
 ; )
 
 (definstances innit-game
@@ -66,5 +66,6 @@
 )
 
 (deffacts innit-counters
-    (cell_counter (continue_count 8))
+    (counter (countt 8))
+    (counter (countt 5) (typee PERSONALITY))
 )

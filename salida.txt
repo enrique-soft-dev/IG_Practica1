@@ -2,12 +2,35 @@ TRUE
 CLIPS> (run)
 Buscaminas
 Buscame esta
-ROBOT selected a Numero hidden cell from board 1
-ROBOT's cell was a CHANGE, changing turn to NINO
-NINO selected a Bandera hidden cell from board 1
-NINO's cell was a CONTINUE, 7 remaining in board 1
-NINO selected a Mina hidden cell from board 1
-NINO's cell was a STOP, changing turn to ROBOT
-NAO wins!
+[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CONTINUE, 7 remaining in board BOARD-1
+[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CONTINUE, 6 remaining in board BOARD-1
+[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CONTINUE, 5 remaining in board BOARD-1
+[DEBUG] NINO selected a Bandera hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CONTINUE, 4 remaining in board BOARD-1
+[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CONTINUE, 3 remaining in board BOARD-1
+[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CONTINUE, 2 remaining in board BOARD-1
+[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CONTINUE, 1 remaining in board BOARD-1
+[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
+[DEBUG] ROBOT's cell was a CONTINUE, 0 remaining in board BOARD-1
+[DEBUG] Game finishes, counterBOARD-1 has reached 0
+[DEBUG] NAO wins!
 <== Focus MAIN
 CLIPS> (dribble-off)

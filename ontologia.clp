@@ -35,12 +35,13 @@
 
 ; Plantilla de Contador de Celdas
 ; Representa un contador de celdas de cada tablero
-(deftemplate cell_counter
-    (slot board
-        (type INTEGER)
-        (default 1)
+(deftemplate counter
+    (slot typee
+        (type SYMBOL)
+        (default BOARD-1)
+        (allowed-values BOARD-1 BOARD-2 PERSONALITY)
     )
-    (slot continue_count
+    (slot countt
         (type INTEGER)
     )
 )
@@ -55,12 +56,14 @@
         (type SYMBOL)
         (allowed-values NINO ROBOT)
     )
-    (slot personality-typee ; Personalidad del jugador. Algo a no tener en cuenta con robot
-        (type STRING)
+    (slot personality_typee ; Personalidad del jugador. Algo a no tener en cuenta con robot
+        (type SYMBOL)
+        (allowed-values TRISTE DISTRAIDO BURLON INSEGURO INQUIETO)
     )
     (slot board ; Tablero que usa cada jugador. Sirve para jeugos con tableros distintos
-        (type INTEGER)
-        (default 1)
+        (type SYMBOL)
+        (default BOARD-1)
+        (allowed-values BOARD-1 BOARD-2)
     )
 )
 
@@ -75,8 +78,9 @@
         (allowed-values CONTINUE CHANGE STOP)
     )
     (slot board ; Tablero al que pertenece la celda
-        (type INTEGER)
-        (default 1)
+        (type SYMBOL)
+        (default BOARD-1)
+        (allowed-values BOARD-1 BOARD-2)
     )
     (slot visible ; Si la celda es visible. Concepto para usar con personalidad
         (type SYMBOL)
@@ -95,29 +99,23 @@
     (slot desc ; Descripcion del juego 
         (type STRING)
     )
-    (slot num_boards ; Numero de tableros a usar
-        (type INTEGER)
-    )
 )
 
 ; Clase de personalidad
 ; Representa las posibles acciones de una personalidad concreta
 (defclass personality (is-a USER)
-    (slot personality_typee ; Tipo de personalidad
+    (slot typee ; Tipo de personalidad
+        (type SYMBOL)
+        (allowed-values TRISTE DISTRAIDO BURLON INSEGURO INQUIETO)
+    )
+    (slot message ; Accion correspondiente a un tipo de personalidad
         (type STRING)
     )
-    (slot action ; Accion correspondiente a un tipo de personalidad
-        (type STRING)
+    (slot reduce-counter
+        (type SYMBOL)
+        (allowed-values BOARD-1 BOARD-2 PERSONALITY)
     )
-)
-
-; Clase de respuesta
-; Representa las posibles respuestas que hace el NAO dependiendo de la personalidad del niño
-(defclass personality (is-a USER)
-    (slot personality_typee ; Tipo de personalidad
-        (type STRING)
-    )
-    (slot answer ; Respuesta correspondiente a un tipo de personalidad
-        (type STRING)
+    (slot reduce-by
+        (type INTEGER)
     )
 )
