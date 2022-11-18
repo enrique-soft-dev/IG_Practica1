@@ -1,26 +1,30 @@
 ;##################################
 ; Reglas de la practica 1
 ; Autores:
-; Mario Maroto Jimenez - 100429025
-; Enrique Mateos Melero - 100429073
+; Mario Maroto Jimenez- 100429025
+; Enrique Mateos Melero- 100429073
 ;##################################
-; TRISTE DISTRAIDO BURLON INSEGURO INQUIETO
+
 ;##################################
 ; INIT GAME BLOCK
 (deffacts innit-gamestate
     (gamestate (state INIT-GAME))
-    (turn (owner ROBOT))
 )
 
 (defrule innit-game
     ?gs <- (gamestate (state INIT-GAME))
-    (object (is-a game) (namee ?n) (desc ?d)) 
-    (object (is-a player) (typee NINO))
-    (object (is-a player) (typee ROBOT))
+    (object (is-a game) (namee ?game_name) (desc ?game_description)) 
+    (object (is-a player) (typee NINO) (namee ?nino_name))
+    (object (is-a player) (typee ROBOT) (namee ?robot_name))
     =>
     (modify ?gs (state SELECT-CELL) (personality_action YES))
-    (printout t ?n crlf)
-    (printout t ?d crlf)
+
+    (printout t crlf "[DEBUG] " ?game_name " initiated" crlf)
+    (printout t "- " ?robot_name ": Veamos, hoy vamos a jugar a... " ?game_name "!" crlf)
+    (printout t "- " ?nino_name ": Que guay! Y como se juega?" crlf)
+    (printout t "- " ?robot_name ": Pues mira, las instrucciones dicen esto:" crlf)
+    (format t ?game_description)
+    (printout t crlf "- " ?robot_name ": Vamos a jugar! Empiezo yo." crlf crlf)
 )
 ;##################################
 
@@ -28,25 +32,32 @@
 ;##################################
 ; SELECT CELL BLOCK
 (defrule select-cell-hidden
-    ?gs <- (gamestate (state SELECT-CELL))
-    (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    ?c <- (object (is-a cell) (content ?co) (typee ?t) (board ?b) (visible NO))
+    ?current_gs <- (gamestate (state SELECT-CELL) (turn ?owner))
+    (object (is-a player) (namee ?player_name) (typee ?owner) (board ?board_id))
+    ?selected_cell <- (object (is-a cell) (content ?cell_content) (typee ?cell_type) (board ?board_id) (visible NO))
     =>
-    (modify ?gs (state PROCESS-CELL) (cell_typee ?t))
-    (modify-instance ?c (visible YES))
-    (printout t "[DEBUG] " ?o " selected a " ?co " hidden cell from board " ?b crlf)
+    (modify ?current_gs (state PROCESS-CELL) (cell_typee ?cell_type) (cell_content ?cell_content))
+    (modify-instance ?selected_cell (visible YES))
+
+    (printout t "[DEBUG] Hidden cell with " ?cell_content " selected by " ?owner " from board " ?board_id " (instance " ?selected_cell ")" crlf)
+    (printout t "- " ?player_name ": Voy a elegir... Esta casilla de aqui. La " ?selected_cell "!" crlf crlf)
 )
 
 (defrule select-cell-visible
-    ?gs <- (gamestate (state SELECT-CELL))
-    (turn (owner ?o&~ROBOT))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    ?c <- (object (is-a cell) (content ?co) (typee ?t) (board ?b) (visible YES))
-    ?pcnt <- (counter (typee PERSONALITY) (countt ?pc))
+    ?current_gs <- (gamestate (state SELECT-CELL) (turn ?owner&~ROBOT))
+    (object (is-a player) (namee ?player_name) (typee ?owner) (board ?board_id))
+    ?selected_cell <- (object (is-a cell) (content ?cell_content) (typee ?cell_type) (board ?board_id) (visible YES))
+    ?p_counter <- (counter (typee PERSONALITY) (countt ?p_count))
+
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?pcnt (countt (- ?pc 1)))
-    (printout t "[DEBUG] " ?o " selected a " ?co " cell from board " ?b crlf)
+    (modify ?p_counter (countt (- ?p_count 1)))
+
+    (printout t "[DEBUG] Visible cell with " ?cell_content " selected by " ?owner " from board " ?board_id " (instance " ?selected_cell ")" crlf)
+    (printout t "        Relevant counters:" crlf)
+    (printout t "        - PERSONALITY: " ?p_count " -> " (- ?p_count 1) crlf)
+    (printout t "- " ?player_name ": Voy a elegir... Esta casilla de aqui. La " ?selected_cell "!" crlf)
+    (printout t "- " ?robot_name ": " ?player_name " esa casilla ya la has elegido, prueba con otra anda!" crlf crlf)
 )
 ;##################################
 
@@ -54,37 +65,46 @@
 ;##################################
 ; PROCESS CELL BLOCK
 (defrule process-cell-continue
-    ?gs <- (gamestate (state PROCESS-CELL) (cell_typee CONTINUE))
-    (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    ?c <- (counter (typee ?b) (countt ?cc))
+    ?current_gs <- (gamestate (state PROCESS-CELL) (cell_typee CONTINUE) (cell_content ?cell_content) (turn ?owner))
+    (object (is-a player) (namee ?player_name) (typee ?owner) (board ?board_id))
+    ?c_counter <- (counter (typee ?board_id) (countt ?c_count))
+
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?gs (state SELECT-CELL))
-    (modify ?c (countt (- ?cc 1)))
-    (printout t "[DEBUG] " ?o "'s cell was a CONTINUE, " (- ?cc 1) " remaining in board " ?b crlf)
+    (modify ?current_gs (state SELECT-CELL))
+    (modify ?c_counter (countt (- ?c_count 1)))
+
+    (printout t "[DEBUG] " ?owner "'s selected cell was a CONTINUE, no turn change" crlf)
+    (printout t "        Relevant counters:" crlf)
+    (printout t "        - " ?board_id ": " ?c_count " -> " (- ?c_count 1) crlf)
+    (printout t "- " ?robot_name ": "?player_name " ha escogido una casilla " ?cell_content ", asique sigue jugando!" crlf crlf)
 )
 
 (defrule process-cell-change
-    ?gs <- (gamestate (state PROCESS-CELL) (cell_typee CHANGE))
-    ?gt <- (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    (object (is-a player) (typee ?no&~?o))
+    ?current_gs <- (gamestate (state PROCESS-CELL) (cell_typee CHANGE) (cell_content ?cell_content) (turn ?owner))
+    (object (is-a player) (namee ?player_name) (typee ?owner))
+    (object (is-a player) (namee ?other_name) (typee ?not_owner&~?owner))
+
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?gs (state SELECT-CELL))
-    (modify ?gt (owner ?no))
-    (printout t "[DEBUG] " ?o "'s cell was a CHANGE, changing turn to " ?no crlf)
+    (modify ?current_gs (state SELECT-CELL) (turn ?not_owner))
+
+    (printout t "[DEBUG] " ?owner "'s cell was a CHANGE, changing turn to " ?not_owner crlf)
+    (printout t "- " ?robot_name ": "?player_name " ha escogido una casilla " ?cell_content "!") 
+    (printout t "Toca cambiar los turnos, ahora juega " ?other_name "." crlf crlf)
 )
 
 (defrule process-cell-stop
-    ?gs <- (gamestate (state PROCESS-CELL) (cell_typee STOP))
-    ?gt <- (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    (object (is-a player) (typee ?no&~?o))
-    ?c <- (counter (typee ?b) (countt ?cc))
+    ?current_gs <- (gamestate (state PROCESS-CELL) (cell_typee STOP) (cell_content ?cell_content) (turn ?owner))
+    (object (is-a player) (namee ?player_name) (typee ?owner))
+    (object (is-a player) (typee ?not_owner&~?owner))
+
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?gs (state END-GAME) (personality_action NO))
-    (modify ?gt (owner ?no))
-    (printout t "[DEBUG] " ?o "'s cell was a STOP, changing turn to " ?no crlf)
+    (modify ?current_gs (state END-GAME) (personality_action NO) (turn ?not_owner))
+
+    (printout t "[DEBUG] " ?owner "'s cell was a STOP, changing turn (to set as winner) to " ?not_owner crlf)
+    (printout t "- " ?robot_name ": " ?player_name " ha escogido una casilla " ?cell_content "! Eso significa que el juego se acaba!" crlf crlf)
 )
 ;##################################
 
@@ -92,34 +112,35 @@
 ;##################################
 ; FINISH GAME BLOCK
 (defrule check-finish-continues
-    (declare (salience 100))
-    ?gs <- (gamestate (state ~END-GAME))
-    (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
-    (counter (typee ?b) (countt 0))
+    (declare (salience 110))
+    ?current_gs <- (gamestate (state ~END-GAME) (turn ?owner))
+    (object (is-a player) (typee ?owner) (board ?board_id))
+    (counter (typee ?board_id) (countt 0))
     =>
-    (modify ?gs (state END-GAME))
-    (printout t "[DEBUG] " ?o " has no CONTINUE left in board " ?b crlf)
+    (modify ?current_gs (state END-GAME) (personality_action NO))
+
+    (printout t "[DEBUG] Game finishes, " ?owner " has no CONTINUE left in board " ?board_id crlf)
 )
 
 (defrule check-finish-personality
     (declare (salience 100))
-    ?gs <- (gamestate (state ~END-GAME))
-    ?gt <- (turn (owner ?o))
-    (object (is-a player) (typee ?no&~?o))
-    (counter (typee PERSONALITY) (countt ?c&:(<= ?c 0)))
+    ?current_gs <- (gamestate (state ~END-GAME) (turn ?owner))
+    (object (is-a player) (typee ?not_owner&~?owner))
+    (counter (typee PERSONALITY) (countt ?p_count&:(<= ?p_count 0)))
     =>
-    (modify ?gt (owner ?no))
-    (modify ?gs (state END-GAME) (personality_action NO))
-    (printout t "[DEBUG] Game finishes due to personality actions" crlf)
+    (modify ?current_gs (state END-GAME) (personality_action NO) (turn ?not_owner))
+
+    (printout t "[DEBUG] Game finishes due to personality actions" crlf crlf)
 )
 
 (defrule end-game
-    ?gs <- (gamestate (state END-GAME))
-    (turn (owner ?o))
-    (object (is-a player) (namee ?n) (typee ?o) (board ?b))
+    (gamestate (state END-GAME) (turn ?owner))
+    (object (is-a player) (namee ?player_name) (typee ?owner))
+
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (printout t "[DEBUG] " ?n " wins!" crlf)
+    (printout t "[DEBUG] " ?player_name " wins" crlf)
+    (printout t "- " ?robot_name ": Okey! Parece que esta vez... " ?player_name " gana!" crlf crlf)
     (halt)
 )
 ;##################################
@@ -128,16 +149,22 @@
 ;##################################
 ; PERSONALITY ACTION BLOCK
 (defrule personality-action
-    (gamestate (state ?s) (personality_action YES))
-    (turn (owner ?o&~ROBOT))
-    (object (is-a player) (typee ?o) (personality_typee ?pt))
-    (object (is-a personality) (typee ?pt) (descriptor ?pd) (message ?pm) (reduce-counter ?rc) (reduce-by ?rb))
-    ?pcnt <- (counter (typee PERSONALITY) (countt ?p))
-    ?rcnt <- (counter (typee ?rc) (countt ?r))
+    (gamestate (personality_action YES) (turn ?owner&~ROBOT))
+    (object (is-a player) (typee ?owner) (personality_typee ?p_type))
+    (object (is-a personality) (typee ?p_type) (descriptor ?p_descriptor) (message $?p_message) (reduce-counter ?r_counter_type) (reduce-by ?r_by))
+    ?p_counter <- (counter (typee PERSONALITY) (countt ?p_count))
+    ?r_counter <- (counter (typee ?r_counter_type) (countt ?r_count))
+
+    (object (is-a player) (namee ?nino_name) (typee NINO))
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?pcnt (countt (- ?p 1)))
-    (modify ?rcnt (countt (- ?r ?rb)))
-    (printout t "[DEBUG] Personality action of type " ?pt " / " ?pd " for player " ?o " with new personality counter " (- ?p ?rb) crlf)
-    (printout t ?pm crlf)
+    (modify ?p_counter (countt (- ?p_count 1)))
+    (modify ?r_counter (countt (- ?r_count ?r_by)))
+    (printout t "[DEBUG] Personality action of type " ?p_type " / " ?p_descriptor " for player " ?owner crlf)
+    (printout t "        Relevant counters:" crlf)
+    (printout t "        - PERSONALITY: " ?p_count " -> " (- ?p_count 1) crlf)
+    (printout t "        - " ?r_counter_type ": " ?r_count " -> " (- ?r_count ?r_by) crlf)
+    (format t (implode$ (replace-member$ (replace-member$ $?p_message (string-to-field ?nino_name) nino_name) (string-to-field ?robot_name) robot_name)))
+    (printout t crlf crlf)
 )
 ;##################################

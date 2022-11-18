@@ -1,5 +1,8 @@
 ; (definstances innit-game
-;     (of game (namee "Hundir La Flota") (desc "Pues tienes que hundir la flota no se que mas quieres que te diga"))
+;     (of game (namee "Hundir La Flota") (desc "Hundir la flota es un juego para dos en el que cada jugador recibe un tablero con barcos repartidos aleatoriamente. 
+; Se puede interactuar con el tablero del oponente para:
+; 1. Ganar si se descubre la posicion de todos los barcos
+; 2. Perder el turno si se selecciona una casilla que no contenga un barco"))
 
 ;     (of player (namee "Pedroooooo") (typee NINO))
 ;     (of player (namee "NAO") (typee ROBOT) (board BOARD-2))
@@ -42,23 +45,26 @@
 ; )
 
 (definstances innit-game
-    (of game (namee "Buscaminas") (desc "Buscame esta"))
+    (of game (namee "Buscaminas") (desc "El Buscaminas es un juego para dos, con un solo tablero, que consiste en:
+1. Seleccionar todas las banderas, ya que así ganas!
+2. Evitar seleccionar casillas que contienen minas, porque sino pierdes
+3. Es preferible no seleccionar numeros puesto que causan un cambio de turno"))
 
     (of player (namee "NAO") (typee ROBOT))
     (of player (namee "Juanitoooo") (typee NINO) (personality_typee TRISTE))
 
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
-    ;(of cell (content "Mina") (typee STOP))
+    (of cell (content "Mina") (typee STOP))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Bandera") (typee CONTINUE))
-    ;(of cell (content "Mina") (typee STOP))
+    (of cell (content "Mina") (typee STOP))
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
-    ;(of cell (content "Mina") (typee STOP))
+    (of cell (content "Mina") (typee STOP))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))
     (of cell (content "Numero") (typee CHANGE))

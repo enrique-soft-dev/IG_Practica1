@@ -12,18 +12,18 @@
     ; TRISTE actions
     (of personality
         (typee TRISTE)
-        (message "Se le cae una lagrima, NAO consuela, sigue el juego")
+        (message - nino_name se pone triste y le cae una lagrima de la mejilla%n- robot_name consuela)
     )
     (of personality
         (typee TRISTE) (descriptor MAKE-EASIER)
         (message "Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego")
         (reduce-by 1)
     )
-    (of personality
-        (typee TRISTE) (descriptor END-GAME)
-        (message "Empieza a llorar, NAO no puede consolar, se acaba el juego")
-        (reduce-counter PERSONALITY) (reduce-by 99)
-    )
+    ; (of personality
+    ;     (typee TRISTE) (descriptor END-GAME)
+    ;     (message "Empieza a llorar, NAO no puede consolar, se acaba el juego")
+    ;     (reduce-counter PERSONALITY) (reduce-by 99)
+    ; )
 
     ; DISTRAIDO actions
     (of personality
@@ -35,11 +35,11 @@
         (message "Se levanta de la mesa, NAO trae de vuelta, reduce la complejidad")
         (reduce-by 1)
     )
-    (of personality
-        (typee DISTRAIDO) (descriptor END-GAME)
-        (message "Se levanta de la mesa, NAO no trae de vuelta, se acaba el juego")
-        (reduce-counter PERSONALITY) (reduce-by 99)
-    )
+    ; (of personality
+    ;     (typee DISTRAIDO) (descriptor END-GAME)
+    ;     (message "Se levanta de la mesa, NAO no trae de vuelta, se acaba el juego")
+    ;     (reduce-counter PERSONALITY) (reduce-by 99)
+    ; )
 
     ; BURLON actions
     (of personality
@@ -51,11 +51,11 @@
         (message "Empieza a vacilar al NAO, NAO regaña, reduce complejidad, sigue el juego")
         (reduce-by 1)
     )
-    (of personality
-        (typee BURLON) (descriptor END-GAME)
-        (message "Empuja a NAO, NAO se rompe, se acaba el juego")
-        (reduce-counter PERSONALITY) (reduce-by 99)
-    )
+    ; (of personality
+    ;     (typee BURLON) (descriptor END-GAME)
+    ;     (message "Empuja a NAO, NAO se rompe, se acaba el juego")
+    ;     (reduce-counter PERSONALITY) (reduce-by 99)
+    ; )
 
     ; INSEGURO actions
     (of personality
@@ -67,11 +67,11 @@
         (message "No quiere elegir casilla, NAO consigue que elija, reduce complejidad, sigue juego")
         (reduce-by 1)
     )
-    (of personality
-        (typee INSEGURO) (descriptor END-GAME)
-        (message "Se niega a elegir casilla, NAO no consigue que elija, se acaba el juego")
-        (reduce-counter PERSONALITY) (reduce-by 99)
-    )
+    ; (of personality
+    ;     (typee INSEGURO) (descriptor END-GAME)
+    ;     (message "Se niega a elegir casilla, NAO no consigue que elija, se acaba el juego")
+    ;     (reduce-counter PERSONALITY) (reduce-by 99)
+    ; )
 
     ; INQUIETO actions
     (of personality
@@ -83,9 +83,9 @@
         (message "Remueve las casillas, NAO quita piezas cambiadas, reduce complejidad, sigue juego")
         (reduce-by 1)
     )
-    (of personality
-        (typee INQUIETO) (descriptor END-GAME)
-        (message "Cambia las casillas, NAO no las puede recolocar, se acaba el juego")
-        (reduce-counter PERSONALITY) (reduce-by 99)
-    )
+    ; (of personality
+    ;     (typee INQUIETO) (descriptor END-GAME)
+    ;     (message "Cambia las casillas, NAO no las puede recolocar, se acaba el juego")
+    ;     (reduce-counter PERSONALITY) (reduce-by 99)
+    ; )
 )

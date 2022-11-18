@@ -1,19 +1,128 @@
 TRUE
 CLIPS> (run)
-Buscaminas
-Buscame esta
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 7 remaining in board BOARD-1
-[DEBUG] ROBOT selected a Bandera hidden cell from board BOARD-1
-[DEBUG] ROBOT's cell was a CONTINUE, 6 remaining in board BOARD-1
-[DEBUG] ROBOT selected a Numero hidden cell from board BOARD-1
+
+[DEBUG] Buscaminas initiated
+- NAO: Veamos, hoy vamos a jugar a... Buscaminas!
+- Juanitoooo: Que guay! Y como se juega?
+- NAO: Pues mira, las instrucciones dicen esto:
+Hundir la flota es un juego para dos en el que cada jugador recibe un tablero con barcos repartidos aleatoriamente. 
+Se puede interactuar con el tablero del oponente para:
+1. Ganar si se descubre la posicion de todos los barcos
+2. Perder el turno si se selecciona una casilla que no contenga un barco
+- NAO: Vamos a jugar! Empiezo yo.
+
+[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen14>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen14>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 8 -> 7
+- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Hidden cell with Numero selected by ROBOT from board BOARD-1 (instance <Instance-gen23>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen23>!
+
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-[DEBUG] NINO selected a Numero hidden cell from board BOARD-1
-[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO with new personality counter 10
-Se le cae una lagrima, NAO consuela, sigue el juego
-[DEBUG] Personality action of type TRISTE / END-GAME for player NINO with new personality counter -90
-Empieza a llorar, NAO no puede consolar, se acaba el juego
-[DEBUG] Game finishes due to personality actions
-[DEBUG] NAO wins!
+- NAO: NAO ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega Juanitoooo.
+
+[DEBUG] Hidden cell with Numero selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Juanitoooo ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Numero selected by ROBOT from board BOARD-1 (instance <Instance-gen18>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen18>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega Juanitoooo.
+
+[DEBUG] Hidden cell with Numero selected by NINO from board BOARD-1 (instance <Instance-gen24>)
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen24>!
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 10 -> 9
+        - BOARD-1: 7 -> 6
+"Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego"
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Juanitoooo ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen15>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 6 -> 5
+- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen21>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen21>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 5 -> 4
+- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Hidden cell with Numero selected by ROBOT from board BOARD-1 (instance <Instance-gen17>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen17>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega Juanitoooo.
+
+[DEBUG] Hidden cell with Bandera selected by NINO from board BOARD-1 (instance <Instance-gen20>)
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen20>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 4 -> 3
+- NAO: Juanitoooo ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Hidden cell with Bandera selected by NINO from board BOARD-1 (instance <Instance-gen26>)
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 9 -> 8
+        - BOARD-1: 3 -> 2
+"Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego"
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 2 -> 1
+- NAO: Juanitoooo ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Visible cell with Bandera selected by NINO from board BOARD-1 (instance <Instance-gen15>)
+        Relevant counters:
+        - PERSONALITY: 8 -> 7
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
+- NAO: Juanitoooo esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Hidden cell with Numero selected by NINO from board BOARD-1 (instance <Instance-gen25>)
+- Juanitoooo: Voy a elegir... Esta casilla de aqui. La <Instance-gen25>!
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 7 -> 6
+        - BOARD-1: 1 -> 1
+- Juanitoooo se pone triste y le cae una lagrima de la mejilla
+- NAO consuela
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Juanitoooo ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen19>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 1 -> 0
+- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Game finishes, ROBOT has no CONTINUE left in board BOARD-1
+[DEBUG] NAO wins
+- NAO: Okey! Parece que esta vez... NAO gana!
+
 <== Focus MAIN
 CLIPS> (dribble-off)

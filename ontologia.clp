@@ -20,16 +20,14 @@
     (slot cell_typee ; Permite saber el tipo de casilla escogida
         (type SYMBOL)
         (allowed-values CONTINUE CHANGE STOP)
-
     )
-)
-
-; Plantilla de Turno
-; Representa el turno de Juego
-(deftemplate turn
-    (slot owner
+    (slot cell_content
+        (type STRING)
+    )
+    (slot turn ; Representa que jugador tiene el turno actualmente
         (type SYMBOL)
         (allowed-values ROBOT NINO)
+        (default ROBOT)
     )
 )
 
@@ -113,9 +111,7 @@
         (allowed-values MESSAGE-ONLY MAKE-EASIER END-GAME)
         (default MESSAGE-ONLY)
     )
-    (slot message ; Accion correspondiente a un tipo de personalidad
-        (type STRING)
-    )
+    (multislot message)
     (slot reduce-counter
         (type SYMBOL)
         (allowed-values BOARD-1 BOARD-2 PERSONALITY)
