@@ -1,0 +1,4 @@
+TRUE
+CLIPS> (run)
+<== Focus MAIN
+CLIPS> (dribble-off)

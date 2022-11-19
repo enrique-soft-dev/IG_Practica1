@@ -5,7 +5,7 @@
 ; 2. Perder el turno si se selecciona una casilla que no contenga un barco"))
 
 ;     (of player (namee "Pedroooooo") (typee NINO))
-;     (of player (namee "NAO") (typee ROBOT) (board BOARD-2))
+;     (of player (namee "NAO") (typee ROBOT) (board BOARD-2) (personality_typee DISTRAIDO))
 
 
 ;     (of cell (content "Barco") (typee CONTINUE))
@@ -46,12 +46,12 @@
 
 (definstances innit-game
     (of game (namee "Buscaminas") (desc "El Buscaminas es un juego para dos, con un solo tablero, que consiste en:
-1. Seleccionar todas las banderas, ya que así ganas!
+1. Seleccionar todas las banderas, ya que asi ganas!
 2. Evitar seleccionar casillas que contienen minas, porque sino pierdes
 3. Es preferible no seleccionar numeros puesto que causan un cambio de turno"))
 
     (of player (namee "NAO") (typee ROBOT))
-    (of player (namee "Juanitoooo") (typee NINO) (personality_typee TRISTE))
+    (of player (namee "Juanito") (typee NINO) (personality_typee DISTRAIDO))
 
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))

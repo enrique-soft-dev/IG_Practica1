@@ -10,7 +10,7 @@
 (deftemplate gamestate
     (slot state ; Estado en el que se encuentra la interaccion
         (type SYMBOL)
-        (allowed-values INIT-GAME SELECT-CELL PROCESS-CELL END-GAME)
+        (allowed-values INIT-GAME SELECT-CELL PROCESS-CELL)
     )
     (slot personality_action ; Flag para interrumpir el estado general de juego debido a una personalidad
         (type SYMBOL)

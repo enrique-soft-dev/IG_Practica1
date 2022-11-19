@@ -1,0 +1,183 @@
+TRUE
+CLIPS> (run)
+
+[DEBUG] Hundir La Flota initiated, NAO and Guille will play
+        Guille has pesonality TRISTE
+- NAO: Veamos, hoy vamos a jugar a... Hundir La Flota!
+- Guille: Que guay! Y como se juega?
+- NAO: Pues mira, las instrucciones dicen esto:
+Hundir la flota es un juego para dos en el que cada jugador recibe un tablero con barcos repartidos aleatoriamente. 
+Se puede interactuar con el tablero del oponente para:
+1. Ganar si se descubre la posicion de todos los barcos
+2. Perder el turno si se selecciona una casilla que no contenga un barco
+- NAO: Vamos a jugar! Empiezo yo.
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen28>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen28>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Guille.
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen24>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen24>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Guille ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen36>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen36>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 8 -> 7
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen34>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen34>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 7 -> 6
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen29>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen29>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 6 -> 5
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen30>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen30>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 5 -> 4
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen32>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen32>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Guille.
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Guille ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen39>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen39>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Guille.
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen18>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen18>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Guille ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen40>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen40>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 4 -> 3
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen41>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen41>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 3 -> 2
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen38>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen38>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Guille.
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen17>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen17>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Guille ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen35>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen35>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 2 -> 1
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen33>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen33>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Guille.
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 8 -> 7
+- NAO: Guille ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen15>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 7 -> 6
+- NAO: Guille ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen22>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen22>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 6 -> 5
+- NAO: Guille ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen26>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 5 -> 4
+- NAO: Guille ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen20>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen20>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 4 -> 3
+- NAO: Guille ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen25>)
+- Guille: Voy a elegir... Esta casilla de aqui. La <Instance-gen25>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Guille ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen37>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen37>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 1 -> 0
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Game finishes, ROBOT has no CONTINUE left in board BOARD-2
+        NAO wins
+- NAO: Okey! NAO ha encontrado todas las casillas Barco asique el ganador es... NAO!
+
+CLIPS> (dribble-off)

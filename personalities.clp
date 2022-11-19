@@ -12,80 +12,140 @@
     ; TRISTE actions
     (of personality
         (typee TRISTE)
-        (message - nino_name se pone triste y le cae una lagrima de la mejilla%n- robot_name consuela)
+        (message 
+            nino_name se pone triste y le cae una lagrima de la mejilla
+            %n- robot_name : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+        )
     )
     (of personality
         (typee TRISTE) (descriptor MAKE-EASIER)
-        (message "Empieza a llorar, NAO consuela, reduce complejidad, sigue el juego")
+        (message 
+            nino_name empieza a llorar fuerte
+            %n- robot_name : nino_name no llores que no pasa nada!
+            %n- nino_name : Me quiero in a mi casa, no quiero jugar!
+            %n- robot_name : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien
+            %n- nino_name se tranquiliza un poco y sigue jugando
+        )
         (reduce-by 1)
     )
     ; (of personality
     ;     (typee TRISTE) (descriptor END-GAME)
-    ;     (message "Empieza a llorar, NAO no puede consolar, se acaba el juego")
+    ;     (message 
+    ;         nino_name empieza a llorar fuerte
+    ;         %n- robot_name : nino_name no llores que no pasa nada! 
+    ;         %n- nino_name : Me quiero in a mi casa, no quiero jugar!
+    ;         %n- robot_name : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien
+    ;         %n- nino_name : No, me quiero ir a mi casa ya!
+    ;         %n- robot_name : Bueno, pues se acaba el juego
+    ;     )
     ;     (reduce-counter PERSONALITY) (reduce-by 99)
     ; )
 
     ; DISTRAIDO actions
     (of personality
         (typee DISTRAIDO)
-        (message "Empieza a mirar al techo, NAO llama la atencion, sigue el juego")
+        (message 
+            nino_name empieza a mirar al techo
+            %n- robot_name : Tierra llamando a nino_name
+            %n- nino_name se rie y sigue jugando
+        )
     )
     (of personality
         (typee DISTRAIDO) (descriptor MAKE-EASIER)
-        (message "Se levanta de la mesa, NAO trae de vuelta, reduce la complejidad")
+        (message 
+            nino_name se levanta de la mesa y corretea por la sala
+            %n- robot_name : Oye nino_name , portate bien por favor
+            %n- nino_name : Perdon...
+        )
         (reduce-by 1)
     )
     ; (of personality
     ;     (typee DISTRAIDO) (descriptor END-GAME)
-    ;     (message "Se levanta de la mesa, NAO no trae de vuelta, se acaba el juego")
+    ;     (message 
+    ;         nino_name se levanta de la mesa y corretea por la sala
+    ;         %n- robot_name : Oye nino_name , portate bien por favor
+    ;         %n- nino_name : No, no quiero jugar mas!
+    ;         %n- robot_name : Pues dejamos de jugar
+    ;     )
     ;     (reduce-counter PERSONALITY) (reduce-by 99)
     ; )
 
     ; BURLON actions
     (of personality
         (typee BURLON)
-        (message "Suelta una carcajada, NAO le regaña, sigue el juego")
+        (message 
+            nino_name suelta una carjada ruidosa
+            %n- robot_name : Hay gente en la sala de al lado, si haces tanto ruido les molestamos
+        )
     )
     (of personality
         (typee BURLON) (descriptor MAKE-EASIER)
-        (message "Empieza a vacilar al NAO, NAO regaña, reduce complejidad, sigue el juego")
+        (message 
+            nino_name se pone a imitar los movimientos de NAO
+            %n- robot_name : Oye, no me hagas burla!
+            %n- nino_name : Jejeje
+        )
         (reduce-by 1)
     )
     ; (of personality
     ;     (typee BURLON) (descriptor END-GAME)
-    ;     (message "Empuja a NAO, NAO se rompe, se acaba el juego")
+    ;     (message 
+    ;         nino_name empuja a NAO y hace que se caiga
+    ;         %n- robot_name : Oye, no me tires al suelo! Se acabo el juego!
+    ;     )
     ;     (reduce-counter PERSONALITY) (reduce-by 99)
     ; )
 
     ; INSEGURO actions
     (of personality
         (typee INSEGURO)
-        (message "No se decide con que casilla elegir, NAO consigue que elija, sigue el juego")
+        (message 
+            nino_name no se decide con que casilla elegir
+            %n- robot_name : Vamos nino_name, hay que elegir!
+        )
     )
     (of personality
         (typee INSEGURO) (descriptor MAKE-EASIER)
-        (message "No quiere elegir casilla, NAO consigue que elija, reduce complejidad, sigue juego")
+        (message 
+            - nino_name : Voy a perder, no quiero elegir casilla!
+            %n- robot_name : Venga, te lo hago un poquito mas facil
+            %n- nino_name : ... Bueno vale
+        )
         (reduce-by 1)
     )
     ; (of personality
     ;     (typee INSEGURO) (descriptor END-GAME)
-    ;     (message "Se niega a elegir casilla, NAO no consigue que elija, se acaba el juego")
+    ;     (message 
+    ;         - nino_name : Voy a perder, no quiero elegir casilla!
+    ;         %n- robot_name : Venga, te lo hago un poquito mas facil
+    ;         %n- nino_name : No, que pierdo
+    ;         %n- robot_name: Bueno, pues no jugamos mas
+    ;     )
     ;     (reduce-counter PERSONALITY) (reduce-by 99)
     ; )
 
     ; INQUIETO actions
     (of personality
         (typee INQUIETO)
-        (message "Empieza a toquetear las casillas, NAO le para, sigue juego")
+        (message 
+            nino_name empieza a toquetear las casillas
+            %n- robot_name : Cuidado nino_name que descolocas las cosas
+        )
     )
     (of personality
         (typee INQUIETO) (descriptor MAKE-EASIER)
-        (message "Remueve las casillas, NAO quita piezas cambiadas, reduce complejidad, sigue juego")
+        (message 
+            nino_name remueve algunas casillas
+            %n- robot_name : Ahora tengo que quitar las que has movido... No hagas eso mas!
+        )
         (reduce-by 1)
     )
     ; (of personality
     ;     (typee INQUIETO) (descriptor END-GAME)
-    ;     (message "Cambia las casillas, NAO no las puede recolocar, se acaba el juego")
+    ;     (message 
+    ;         nino_name remueve todas casillas
+    ;         %n- robot_name : Ya no podemos seguir jugando! Muy mal nino_name ...
+    ;     )
     ;     (reduce-counter PERSONALITY) (reduce-by 99)
     ; )
 )

@@ -1,50 +1,11 @@
-; (definstances innit-game
-;     (of game (namee "Hundir La Flota") (desc "Pues tienes que hundir la flota no se que mas quieres que te diga"))
-
-;     (of player (namee "NAO") (typee ROBOT))
-;     (of player (namee "Pedroooooo") (typee NINO) (board 2))
-
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Agua") (typee CHANGE))
-;     (of cell (content "Barco") (typee CONTINUE))
-;     (of cell (content "Barco") (typee CONTINUE))
-    
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Agua") (typee CHANGE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-;     (of cell (content "Barco") (typee CONTINUE) (board 2))
-; )
-
-; (deffacts innit-counters
-;     (cell_counter (continue_count 8))
-;     (cell_counter (board 2) (continue_count 8))
-; )
-
 (definstances innit-game
-    (of game (namee "Buscaminas") (desc "Buscame esta"))
+    (of game (namee "Buscaminas") (desc "El Buscaminas es un juego para dos, con un solo tablero, que consiste en:
+1. Seleccionar todas las banderas, ya que asi ganas!
+2. Evitar seleccionar casillas que contienen minas, porque sino pierdes
+3. Es preferible no seleccionar numeros puesto que causan un cambio de turno"))
 
     (of player (namee "NAO") (typee ROBOT))
-    (of player (namee "Juanitoooo") (typee NINO))
+    (of player (namee "Mario") (typee NINO) (personality_typee INQUIETO))
 
     (of cell (content "Bandera") (typee CONTINUE))
     (of cell (content "Bandera") (typee CONTINUE))
@@ -66,5 +27,6 @@
 )
 
 (deffacts innit-counters
-    (cell_counter (continue_count 8))
+    (counter (countt 8))
+    (counter (countt 10) (typee PERSONALITY))
 )

@@ -14,12 +14,13 @@
 (defrule innit-game
     ?gs <- (gamestate (state INIT-GAME))
     (object (is-a game) (namee ?game_name) (desc ?game_description)) 
-    (object (is-a player) (typee NINO) (namee ?nino_name))
+    (object (is-a player) (typee NINO) (namee ?nino_name) (personality_typee ?p_type))
     (object (is-a player) (typee ROBOT) (namee ?robot_name))
     =>
     (modify ?gs (state SELECT-CELL) (personality_action YES))
 
-    (printout t crlf "[DEBUG] " ?game_name " initiated" crlf)
+    (printout t crlf "[DEBUG] " ?game_name " initiated, " ?robot_name " and " ?nino_name " will play" crlf)
+    (printout t "        " ?nino_name " has pesonality " ?p_type crlf)
     (printout t "- " ?robot_name ": Veamos, hoy vamos a jugar a... " ?game_name "!" crlf)
     (printout t "- " ?nino_name ": Que guay! Y como se juega?" crlf)
     (printout t "- " ?robot_name ": Pues mira, las instrucciones dicen esto:" crlf)
@@ -97,14 +98,14 @@
 (defrule process-cell-stop
     ?current_gs <- (gamestate (state PROCESS-CELL) (cell_typee STOP) (cell_content ?cell_content) (turn ?owner))
     (object (is-a player) (namee ?player_name) (typee ?owner))
-    (object (is-a player) (typee ?not_owner&~?owner))
+    (object (is-a player) (namee ?winner_name) (typee ?not_owner&~?owner))
 
     (object (is-a player) (namee ?robot_name) (typee ROBOT))
     =>
-    (modify ?current_gs (state END-GAME) (personality_action NO) (turn ?not_owner))
-
     (printout t "[DEBUG] " ?owner "'s cell was a STOP, changing turn (to set as winner) to " ?not_owner crlf)
-    (printout t "- " ?robot_name ": " ?player_name " ha escogido una casilla " ?cell_content "! Eso significa que el juego se acaba!" crlf crlf)
+    (printout t "        " ?winner_name " wins" crlf)
+    (printout t "- " ?robot_name ": " ?player_name " ha escogido una casilla " ?cell_content "! Eso significa que el juego se acaba y gana " ?winner_name "!" crlf crlf)
+    (halt)
 )
 ;##################################
 
@@ -113,34 +114,31 @@
 ; FINISH GAME BLOCK
 (defrule check-finish-continues
     (declare (salience 110))
-    ?current_gs <- (gamestate (state ~END-GAME) (turn ?owner))
-    (object (is-a player) (typee ?owner) (board ?board_id))
+    (gamestate (turn ?owner))
+    (object (is-a player) (namee ?winner_name) (typee ?owner) (board ?board_id))
     (counter (typee ?board_id) (countt 0))
-    =>
-    (modify ?current_gs (state END-GAME) (personality_action NO))
 
+    (object (is-a player) (namee ?robot_name) (typee ROBOT))
+    (object (is-a cell) (content ?cell_content) (typee CONTINUE))
+    =>
     (printout t "[DEBUG] Game finishes, " ?owner " has no CONTINUE left in board " ?board_id crlf)
+    (printout t "        " ?winner_name " wins" crlf)
+    (printout t "- " ?robot_name ": Okey! " ?winner_name " ha encontrado todas las casillas " ?cell_content " asique el ganador es... " ?winner_name "!" crlf crlf)
+    (halt)
 )
 
 (defrule check-finish-personality
     (declare (salience 100))
-    ?current_gs <- (gamestate (state ~END-GAME) (turn ?owner))
-    (object (is-a player) (typee ?not_owner&~?owner))
+    (gamestate (turn ?owner))
+    (object (is-a player) (namee ?winner_name) (typee ?not_owner&~?owner))
     (counter (typee PERSONALITY) (countt ?p_count&:(<= ?p_count 0)))
-    =>
-    (modify ?current_gs (state END-GAME) (personality_action NO) (turn ?not_owner))
-
-    (printout t "[DEBUG] Game finishes due to personality actions" crlf crlf)
-)
-
-(defrule end-game
-    (gamestate (state END-GAME) (turn ?owner))
-    (object (is-a player) (namee ?player_name) (typee ?owner))
 
     (object (is-a player) (namee ?robot_name) (typee ROBOT))
+    (object (is-a player) (namee ?nino_name) (typee NINO))
     =>
-    (printout t "[DEBUG] " ?player_name " wins" crlf)
-    (printout t "- " ?robot_name ": Okey! Parece que esta vez... " ?player_name " gana!" crlf crlf)
+    (printout t "[DEBUG] Game finishes due to personality actions" crlf)
+    (printout t "        " ?winner_name " wins" crlf)
+    (printout t "- " ?robot_name ": No te estas portando nada bien " ?nino_name ", vamos a dejar de jugar. Gano yo." crlf crlf)
     (halt)
 )
 ;##################################

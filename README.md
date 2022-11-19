@@ -1,1 +1,1 @@
-# IG_Practica1
+# Práctica 1 de Ingeniería de Conocimiento

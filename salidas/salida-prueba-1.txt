@@ -1,0 +1,118 @@
+TRUE
+CLIPS> (run)
+
+[DEBUG] Buscaminas initiated, NAO and Alvaro will play
+        Alvaro has pesonality TRISTE
+- NAO: Veamos, hoy vamos a jugar a... Buscaminas!
+- Alvaro: Que guay! Y como se juega?
+- NAO: Pues mira, las instrucciones dicen esto:
+El Buscaminas es un juego para dos, con un solo tablero, que consiste en:
+1. Seleccionar todas las banderas, ya que asi ganas!
+2. Evitar seleccionar casillas que contienen minas, porque sino pierdes
+3. Es preferible no seleccionar numeros puesto que causan un cambio de turno
+- NAO: Vamos a jugar! Empiezo yo.
+
+[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen20>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen20>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 8 -> 7
+- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+
+[DEBUG] Hidden cell with Numero selected by ROBOT from board BOARD-1 (instance <Instance-gen27>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen27>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Numero!Toca cambiar los turnos, ahora juega Alvaro.
+
+[DEBUG] Hidden cell with Mina selected by NINO from board BOARD-1 (instance <Instance-gen25>)
+- Alvaro: Voy a elegir... Esta casilla de aqui. La <Instance-gen25>!
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 10 -> 9
+        - BOARD-1: 7 -> 7
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 9 -> 8
+        - BOARD-1: 7 -> 7
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 8 -> 7
+        - BOARD-1: 7 -> 6
+Alvaro empieza a llorar fuerte 
+- NAO : Alvaro no llores que no pasa nada! 
+- Alvaro : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien 
+- Alvaro se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 7 -> 6
+        - BOARD-1: 6 -> 6
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 6 -> 5
+        - BOARD-1: 6 -> 5
+Alvaro empieza a llorar fuerte 
+- NAO : Alvaro no llores que no pasa nada! 
+- Alvaro : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien 
+- Alvaro se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 5 -> 4
+        - BOARD-1: 5 -> 4
+Alvaro empieza a llorar fuerte 
+- NAO : Alvaro no llores que no pasa nada! 
+- Alvaro : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien 
+- Alvaro se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 4 -> 3
+        - BOARD-1: 4 -> 4
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 3 -> 2
+        - BOARD-1: 4 -> 3
+Alvaro empieza a llorar fuerte 
+- NAO : Alvaro no llores que no pasa nada! 
+- Alvaro : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien 
+- Alvaro se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 2 -> 1
+        - BOARD-1: 3 -> 3
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 1 -> 0
+        - BOARD-1: 3 -> 3
+Alvaro se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Game finishes due to personality actions
+        NAO wins
+- NAO: No te estas portando nada bien Alvaro, vamos a dejar de jugar. Gano yo.
+
+CLIPS> (dribble-off)
