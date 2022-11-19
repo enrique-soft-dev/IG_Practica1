@@ -2,7 +2,7 @@
 (load reglas.clp)
 (load personalities.clp)
 (load ./pruebas/prueba-8.clp)
-(seed (integer (time))) 
+(seed 3) 
 (set-strategy random)
 (watch focus) 
 (reset)

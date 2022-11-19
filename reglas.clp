@@ -91,7 +91,7 @@
     (modify ?current_gs (state SELECT-CELL) (turn ?not_owner))
 
     (printout t "[DEBUG] " ?owner "'s cell was a CHANGE, changing turn to " ?not_owner crlf)
-    (printout t "- " ?robot_name ": "?player_name " ha escogido una casilla " ?cell_content "!") 
+    (printout t "- " ?robot_name ": "?player_name " ha escogido una casilla " ?cell_content "! ") 
     (printout t "Toca cambiar los turnos, ahora juega " ?other_name "." crlf crlf)
 )
 

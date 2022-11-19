@@ -12,33 +12,13 @@ Se puede interactuar con el tablero del oponente para:
 2. Perder el turno si se selecciona una casilla que no contenga un barco
 - NAO: Vamos a jugar! Empiezo yo.
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen34>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen34>!
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen37>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen37>!
 
 [DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
         - BOARD-2: 8 -> 7
 - NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen28>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen28>!
-
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Miguel.
-
-[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
-- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
-
-[DEBUG] NINO's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-1: 8 -> 7
-- NAO: Miguel ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen17>)
-- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen17>!
-
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Miguel ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
 
 [DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen35>)
 - NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen35>!
@@ -48,88 +28,155 @@ Se puede interactuar con el tablero del oponente para:
         - BOARD-2: 7 -> 6
 - NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen31>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen31>!
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen32>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen32>!
 
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Miguel.
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Miguel.
 
-[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen26>)
-- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen14>)
+- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen14>!
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 15 -> 14
+        - BOARD-1: 8 -> 8
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 14 -> 13
+        - BOARD-1: 8 -> 8
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 13 -> 12
+        - BOARD-1: 8 -> 7
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 12 -> 11
+        - BOARD-1: 7 -> 7
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 11 -> 10
+        - BOARD-1: 7 -> 7
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 10 -> 9
+        - BOARD-1: 7 -> 6
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
 
 [DEBUG] NINO's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - BOARD-1: 7 -> 6
+        - BOARD-1: 6 -> 5
 - NAO: Miguel ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
-- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
-
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Miguel ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
-
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen40>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen40>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 6 -> 5
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 9 -> 8
+        - BOARD-1: 5 -> 5
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen30>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen30>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Visible cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen14>)
         Relevant counters:
-        - BOARD-2: 5 -> 4
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 8 -> 7
+- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen14>!
+- NAO: Miguel esa casilla ya la has elegido, prueba con otra anda!
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen37>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen37>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 4 -> 3
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 7 -> 6
+        - BOARD-1: 5 -> 5
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
 
-[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen33>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen33>!
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
+- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
 
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Miguel.
-
-[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen25>)
-- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen25>!
-
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Miguel ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
-
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen36>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen36>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 3 -> 2
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 6 -> 5
+        - BOARD-1: 5 -> 5
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen41>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen41>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
         Relevant counters:
-        - BOARD-2: 2 -> 1
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 5 -> 4
+        - BOARD-1: 5 -> 4
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen29>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen29>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
         Relevant counters:
-        - BOARD-2: 1 -> 0
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 4 -> 3
+        - BOARD-1: 4 -> 3
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
 
-[DEBUG] Game finishes, ROBOT has no CONTINUE left in board BOARD-2
-        NAO wins
-- NAO: Okey! NAO ha encontrado todas las casillas Barco asique el ganador es... NAO!
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 3 -> 2
+- NAO: Miguel ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen23>)
+- Miguel: Voy a elegir... Esta casilla de aqui. La <Instance-gen23>!
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 3 -> 2
+        - BOARD-1: 2 -> 1
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
+
+[DEBUG] Personality action of type TRISTE / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 2 -> 1
+        - BOARD-1: 1 -> 1
+Miguel se pone triste y le cae una lagrima de la mejilla 
+- NAO : Tranquilo, no pasa nada. Venga, vamos a seguir jugando
+
+[DEBUG] Personality action of type TRISTE / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 1 -> 0
+        - BOARD-1: 1 -> 0
+Miguel empieza a llorar fuerte 
+- NAO : Miguel no llores que no pasa nada! 
+- Miguel : Me quiero in a mi casa, no quiero jugar! 
+- NAO : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien 
+nino_name se tranquiliza un poco y sigue jugando
+
+[DEBUG] Game finishes, NINO has no CONTINUE left in board BOARD-1
+        Miguel wins
+- NAO: Okey! Miguel ha encontrado todas las casillas Barco asique el ganador es... Miguel!
 
 CLIPS> (dribble-off)

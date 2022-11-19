@@ -23,8 +23,8 @@
             nino_name empieza a llorar fuerte
             %n- robot_name : nino_name no llores que no pasa nada!
             %n- nino_name : Me quiero in a mi casa, no quiero jugar!
-            %n- robot_name : Tranquilo/a peque, vamos a seguir jugando que te lo vas a pasar muy bien
-            %n- nino_name se tranquiliza un poco y sigue jugando
+            %n- robot_name : Tranquilo/a peque, vamos a hacerlo un poquito mas facil y seguimos jugando que te lo vas a pasar muy bien
+            %nnino_name se tranquiliza un poco y sigue jugando
         )
         (reduce-by 1)
     )

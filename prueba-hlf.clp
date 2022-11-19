@@ -5,7 +5,7 @@ Se puede interactuar con el tablero del oponente para:
 2. Perder el turno si se selecciona una casilla que no contenga un barco"))
 
     (of player (namee "NAO") (typee ROBOT) (board BOARD-2))
-    (of player (namee "Maria") (typee NINO) (personality_typee BRULON))
+    (of player (namee "Pedro") (typee NINO) (personality_typee BRULON))
 
 
     (of cell (content "Barco") (typee CONTINUE))
@@ -37,10 +37,4 @@ Se puede interactuar con el tablero del oponente para:
     (of cell (content "Agua") (typee CHANGE) (board BOARD-2))
     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
-)
-
-(deffacts innit-counters
-    (counter (countt 8))
-    (counter (typee BOARD-2) (countt 8))
-    (counter (countt 15) (typee PERSONALITY))
 )

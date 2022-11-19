@@ -2,7 +2,7 @@ TRUE
 CLIPS> (run)
 
 [DEBUG] Hundir La Flota initiated, NAO and Marta will play
-        Marta has pesonality TRISTE
+        Marta has pesonality INQUIETO
 - NAO: Veamos, hoy vamos a jugar a... Hundir La Flota!
 - Marta: Que guay! Y como se juega?
 - NAO: Pues mira, las instrucciones dicen esto:
@@ -12,76 +12,12 @@ Se puede interactuar con el tablero del oponente para:
 2. Perder el turno si se selecciona una casilla que no contenga un barco
 - NAO: Vamos a jugar! Empiezo yo.
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen34>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen34>!
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen36>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen36>!
 
 [DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
         - BOARD-2: 8 -> 7
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen28>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen28>!
-
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Marta.
-
-[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
-- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
-
-[DEBUG] NINO's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-1: 8 -> 7
-- NAO: Marta ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen17>)
-- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen17>!
-
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Marta ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
-
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen35>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen35>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-2: 7 -> 6
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen31>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen31>!
-
-[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Marta.
-
-[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen26>)
-- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
-
-[DEBUG] NINO's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-1: 7 -> 6
-- NAO: Marta ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
-- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
-
-[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Marta ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
-
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen40>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen40>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-2: 6 -> 5
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
-
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen30>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen30>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-2: 5 -> 4
 - NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
 [DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen37>)
@@ -89,47 +25,161 @@ Se puede interactuar con el tablero del oponente para:
 
 [DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - BOARD-2: 4 -> 3
+        - BOARD-2: 7 -> 6
 - NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
 [DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen33>)
 - NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen33>!
 
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega Marta.
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Marta.
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen26>)
+- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 8 -> 7
+- NAO: Marta ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Marta ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen39>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen39>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Marta.
 
 [DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen25>)
 - Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen25>!
 
+[DEBUG] Personality action of type INQUIETO / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 15 -> 14
+        - BOARD-1: 7 -> 6
+Marta remueve algunas casillas 
+- NAO : Ahora tengo que quitar las que has movido... No hagas eso mas!
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 14 -> 13
+        - BOARD-1: 6 -> 6
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 13 -> 12
+        - BOARD-1: 6 -> 5
+Marta remueve algunas casillas 
+- NAO : Ahora tengo que quitar las que has movido... No hagas eso mas!
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 12 -> 11
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 11 -> 10
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
 [DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
-- NAO: Marta ha escogido una casilla Agua!Toca cambiar los turnos, ahora juega NAO.
+- NAO: Marta ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega NAO.
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen36>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen36>!
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen38>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen38>!
 
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Marta.
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen15>)
+- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 3 -> 2
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 10 -> 9
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen41>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen41>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 2 -> 1
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 9 -> 8
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
 
-[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen29>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen29>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
         Relevant counters:
-        - BOARD-2: 1 -> 0
-- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+        - PERSONALITY: 8 -> 7
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
 
-[DEBUG] Game finishes, ROBOT has no CONTINUE left in board BOARD-2
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 7 -> 6
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 6 -> 5
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 5 -> 4
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 4 -> 3
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MESSAGE-ONLY for player NINO
+        Relevant counters:
+        - PERSONALITY: 3 -> 2
+        - BOARD-1: 5 -> 5
+Marta empieza a toquetear las casillas 
+- NAO : Cuidado Marta que descolocas las cosas
+
+[DEBUG] Personality action of type INQUIETO / MAKE-EASIER for player NINO
+        Relevant counters:
+        - PERSONALITY: 2 -> 1
+        - BOARD-1: 5 -> 4
+Marta remueve algunas casillas 
+- NAO : Ahora tengo que quitar las que has movido... No hagas eso mas!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 4 -> 3
+- NAO: Marta ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Visible cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+        Relevant counters:
+        - PERSONALITY: 1 -> 0
+- Marta: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+- NAO: Marta esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Game finishes due to personality actions
         NAO wins
-- NAO: Okey! NAO ha encontrado todas las casillas Barco asique el ganador es... NAO!
+- NAO: No te estas portando nada bien Marta, vamos a dejar de jugar. Gano yo.
 
 CLIPS> (dribble-off)

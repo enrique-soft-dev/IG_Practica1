@@ -4,8 +4,8 @@ Se puede interactuar con el tablero del oponente para:
 1. Ganar si se descubre la posicion de todos los barcos
 2. Perder el turno si se selecciona una casilla que no contenga un barco"))
 
-    (of player (namee "Marta") (typee NINO))
-    (of player (namee "NAO") (typee ROBOT) (board BOARD-2) (personality_typee INQUIETO))
+    (of player (namee "NAO") (typee ROBOT) (board BOARD-2))
+    (of player (namee "Marta") (typee NINO) (personality_typee INQUIETO))
 
 
     (of cell (content "Barco") (typee CONTINUE))
@@ -42,4 +42,5 @@ Se puede interactuar con el tablero del oponente para:
 (deffacts innit-counters
     (counter (countt 8))
     (counter (typee BOARD-2) (countt 8))
+    (counter (countt 15) (typee PERSONALITY))
 )
