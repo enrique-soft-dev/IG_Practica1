@@ -1,122 +1,195 @@
 TRUE
 CLIPS> (run)
 
-[DEBUG] Buscaminas initiated, NAO and Juanito will play
-        Juanito has pesonality DISTRAIDO
-- NAO: Veamos, hoy vamos a jugar a... Buscaminas!
-- Juanito: Que guay! Y como se juega?
+[DEBUG] Hundir La Flota initiated, NAO and Pedro will play
+        Pedro has pesonality BRULON
+- NAO: Veamos, hoy vamos a jugar a... Hundir La Flota!
+- Pedro: Que guay! Y como se juega?
 - NAO: Pues mira, las instrucciones dicen esto:
-El Buscaminas es un juego para dos, con un solo tablero, que consiste en:
-1. Seleccionar todas las banderas, ya que asi ganas!
-2. Evitar seleccionar casillas que contienen minas, porque sino pierdes
-3. Es preferible no seleccionar numeros puesto que causan un cambio de turno
+Hundir la flota es un juego para dos en el que cada jugador recibe un tablero con barcos repartidos aleatoriamente. 
+Se puede interactuar con el tablero del oponente para:
+1. Ganar si se descubre la posicion de todos los barcos
+2. Perder el turno si se selecciona una casilla que no contenga un barco
 - NAO: Vamos a jugar! Empiezo yo.
 
-[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen22>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen22>!
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen37>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen37>!
 
 [DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - BOARD-1: 8 -> 7
-- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
+        - BOARD-2: 8 -> 7
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Hidden cell with Bandera selected by ROBOT from board BOARD-1 (instance <Instance-gen15>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
-
-[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
-        Relevant counters:
-        - BOARD-1: 7 -> 6
-- NAO: NAO ha escogido una casilla Bandera, asique sigue jugando!
-
-[DEBUG] Hidden cell with Numero selected by ROBOT from board BOARD-1 (instance <Instance-gen26>)
-- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen31>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen31>!
 
 [DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
-- NAO: NAO ha escogido una casilla Numero! Toca cambiar los turnos, ahora juega Juanito.
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Pedro.
 
-[DEBUG] Visible cell with Bandera selected by NINO from board BOARD-1 (instance <Instance-gen15>)
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen24>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen24>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Pedro ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen35>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen35>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - PERSONALITY: 10 -> 9
-- Juanito: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
-- NAO: Juanito esa casilla ya la has elegido, prueba con otra anda!
+        - BOARD-2: 7 -> 6
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Hidden cell with Numero selected by NINO from board BOARD-1 (instance <Instance-gen27>)
-- Juanito: Voy a elegir... Esta casilla de aqui. La <Instance-gen27>!
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen40>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen40>!
 
-[DEBUG] Personality action of type DISTRAIDO / MESSAGE-ONLY for player NINO
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - PERSONALITY: 9 -> 8
-        - BOARD-1: 6 -> 6
-Juanito empieza a mirar al techo 
-- NAO : Tierra llamando a Juanito 
-- Juanito se rie y sigue jugando
+        - BOARD-2: 6 -> 5
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Personality action of type DISTRAIDO / MAKE-EASIER for player NINO
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen38>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen38>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Pedro.
+
+[DEBUG] Visible cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen24>)
         Relevant counters:
-        - PERSONALITY: 8 -> 7
+        - PERSONALITY: 15 -> 14
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen24>!
+- NAO: Pedro esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen14>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen14>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 8 -> 7
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen27>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen27>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 7 -> 6
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
         - BOARD-1: 6 -> 5
-Juanito se levanta de la mesa y corretea por la sala 
-- NAO : Oye Juanito , portate bien por favor 
-- Juanito : Perdon...
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Personality action of type DISTRAIDO / MAKE-EASIER for player NINO
+[DEBUG] Visible cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen27>)
         Relevant counters:
-        - PERSONALITY: 7 -> 6
+        - PERSONALITY: 14 -> 13
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen27>!
+- NAO: Pedro esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen22>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen22>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
         - BOARD-1: 5 -> 4
-Juanito se levanta de la mesa y corretea por la sala 
-- NAO : Oye Juanito , portate bien por favor 
-- Juanito : Perdon...
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Personality action of type DISTRAIDO / MAKE-EASIER for player NINO
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen23>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen23>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Pedro ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen28>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen28>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Pedro.
+
+[DEBUG] Hidden cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+
+[DEBUG] NINO's cell was a CHANGE, changing turn to ROBOT
+- NAO: Pedro ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega NAO.
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen30>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen30>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - PERSONALITY: 6 -> 5
+        - BOARD-2: 5 -> 4
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Barco selected by ROBOT from board BOARD-2 (instance <Instance-gen29>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen29>!
+
+[DEBUG] ROBOT's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-2: 4 -> 3
+- NAO: NAO ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Hidden cell with Agua selected by ROBOT from board BOARD-2 (instance <Instance-gen32>)
+- NAO: Voy a elegir... Esta casilla de aqui. La <Instance-gen32>!
+
+[DEBUG] ROBOT's cell was a CHANGE, changing turn to NINO
+- NAO: NAO ha escogido una casilla Agua! Toca cambiar los turnos, ahora juega Pedro.
+
+[DEBUG] Visible cell with Agua selected by NINO from board BOARD-1 (instance <Instance-gen16>)
+        Relevant counters:
+        - PERSONALITY: 13 -> 12
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen16>!
+- NAO: Pedro esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Visible cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen19>)
+        Relevant counters:
+        - PERSONALITY: 12 -> 11
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen19>!
+- NAO: Pedro esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Visible cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen27>)
+        Relevant counters:
+        - PERSONALITY: 11 -> 10
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen27>!
+- NAO: Pedro esa casilla ya la has elegido, prueba con otra anda!
+
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen20>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen20>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
         - BOARD-1: 4 -> 3
-Juanito se levanta de la mesa y corretea por la sala 
-- NAO : Oye Juanito , portate bien por favor 
-- Juanito : Perdon...
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Personality action of type DISTRAIDO / MAKE-EASIER for player NINO
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen21>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen21>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - PERSONALITY: 5 -> 4
         - BOARD-1: 3 -> 2
-Juanito se levanta de la mesa y corretea por la sala 
-- NAO : Oye Juanito , portate bien por favor 
-- Juanito : Perdon...
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Personality action of type DISTRAIDO / MESSAGE-ONLY for player NINO
-        Relevant counters:
-        - PERSONALITY: 4 -> 3
-        - BOARD-1: 2 -> 2
-Juanito empieza a mirar al techo 
-- NAO : Tierra llamando a Juanito 
-- Juanito se rie y sigue jugando
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen26>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen26>!
 
-[DEBUG] Personality action of type DISTRAIDO / MESSAGE-ONLY for player NINO
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
         Relevant counters:
-        - PERSONALITY: 3 -> 2
-        - BOARD-1: 2 -> 2
-Juanito empieza a mirar al techo 
-- NAO : Tierra llamando a Juanito 
-- Juanito se rie y sigue jugando
-
-[DEBUG] Personality action of type DISTRAIDO / MESSAGE-ONLY for player NINO
-        Relevant counters:
-        - PERSONALITY: 2 -> 1
-        - BOARD-1: 2 -> 2
-Juanito empieza a mirar al techo 
-- NAO : Tierra llamando a Juanito 
-- Juanito se rie y sigue jugando
-
-[DEBUG] Personality action of type DISTRAIDO / MAKE-EASIER for player NINO
-        Relevant counters:
-        - PERSONALITY: 1 -> 0
         - BOARD-1: 2 -> 1
-Juanito se levanta de la mesa y corretea por la sala 
-- NAO : Oye Juanito , portate bien por favor 
-- Juanito : Perdon...
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
 
-[DEBUG] Game finishes due to personality actions
-        NAO wins
-- NAO: No te estas portando nada bien Juanito, vamos a dejar de jugar. Gano yo.
+[DEBUG] Hidden cell with Barco selected by NINO from board BOARD-1 (instance <Instance-gen15>)
+- Pedro: Voy a elegir... Esta casilla de aqui. La <Instance-gen15>!
+
+[DEBUG] NINO's selected cell was a CONTINUE, no turn change
+        Relevant counters:
+        - BOARD-1: 1 -> 0
+- NAO: Pedro ha escogido una casilla Barco, asique sigue jugando!
+
+[DEBUG] Game finishes, NINO has no CONTINUE left in board BOARD-1
+        Pedro wins
+- NAO: Okey! Pedro ha encontrado todas las casillas Barco asique el ganador es... Pedro!
 
 CLIPS> (dribble-off)

@@ -38,3 +38,9 @@ Se puede interactuar con el tablero del oponente para:
     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
     (of cell (content "Barco") (typee CONTINUE) (board BOARD-2))
 )
+
+(deffacts innit-counters
+    (counter (countt 8))
+    (counter (typee BOARD-2) (countt 8))
+    (counter (countt 15) (typee PERSONALITY))
+)

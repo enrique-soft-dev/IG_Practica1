@@ -7,7 +7,7 @@
 (load ontologia.clp)
 (load reglas.clp)
 (load personalities.clp)
-(load prueba-buscaminas.clp)
+(load prueba-hlf.clp)
 (seed (integer (time))) 
 (set-strategy random)
 (watch focus) 
